@@ -5,8 +5,10 @@
  */
 package clienttcp;
 
+import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.Socket;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -24,9 +26,10 @@ public class ClientTCP {
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
         
-        Scanner in = new Scanner (System.in);
+        //Scanner in = new Scanner (System.in);
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         System.out.print(">");
-        String message ="Tassone: " + in.nextLine();
+        String message ="Tassone: " + in.readLine();
         
         
             Socket clientSocket = new Socket (/*"10.102.0.65"*/"localhost",3333);
