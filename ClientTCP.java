@@ -32,8 +32,8 @@ public class ClientTCP {
             Socket clientSocket = new Socket (/*"10.102.0.65"*/"localhost",3333);
             DataOutputStream out= new DataOutputStream(clientSocket.getOutputStream());
             out.writeBytes(message + "\n");
-            //out.flush();//flush ripulisce il flusso dello stream
-            //out.close();
+            out.flush();//flush ripulisce il flusso dello stream
+            out.close();
         
         }
     }
